@@ -1,0 +1,119 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"Sections": [
+				{
+					"_Type": "Section.Type.ObjectCardCollection",
+					"Visible": true,
+					"Layout": {
+						"LayoutType": "HorizontalScroll"
+					},
+					"_Name": "ObjectCardTest",
+					"Header": {
+						"Caption": "$(L,CardsTitle)",
+						"UseTopPadding": false
+					},
+					"Card": {
+						"_Type":"Control.Type.ObjectCard",
+						"Title": "/MDK01/Rules/Common/ParseProcessId.js",
+						"Subhead": "{cita}",
+						"StatusText": "$(L,'Pending')",
+						"Footnote": "{fecha} - {horaCita}",
+						"Description": "{proveedor} - {razonSocial}",						
+						"OnPress": "/MDK01/Rules/Common/Home/HomeCardOnPress.js",						
+						"DetailImage": "/MDK01/Rules/Common/IconFromProcessId.js",
+						"Styles": {
+							"StatusText":  "HighPriorityRed"
+                        }						
+					},
+					"Target":{
+						"EntitySet": "TU_AUDIT",
+						"Service": "/MDK01/Services/API05.service",
+						"QueryOptions": "$filter=inspectionCompleted eq false&$orderby=processId"
+					},
+					"Separators": {
+						"ControlSeparator": false
+					},			
+					"DataSubscriptions": [
+						"TU_AUDIT"
+					]
+				},
+                {
+					"SimplePropertyCells": [
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "DisclosureIndicator",
+								"KeyName": "$(L,'TUInspection')",
+								"OnPress": "/MDK01/Actions/NavToTUInspectionsList.action"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "DisclosureIndicator",
+								"KeyName": "$(L,'UnloadInspections')",
+								"OnPress": "/MDK01/Actions/NavToUnloadInspection_List.action"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "DisclosureIndicator",
+								"KeyName": "$(L,'InternInspections')",
+								"OnPress": "/MDK01/Actions/Intern_Inspection/NavToInternInspection.action"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "DisclosureIndicator",
+								"KeyName": "$(L,'SuppliesInspections')",
+								"OnPress": "/MDK01/Actions/Supplies_Inspection/NavToSuppliesInspection.action"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "DisclosureIndicator",
+								"KeyName": "$(L,'CandysProductsInspections')",
+								"OnPress": "/MDK01/Actions/NavToCandyInspection_List.action"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "DisclosureIndicator",
+								"KeyName": "$(L,'ImportsProductsInspections')",
+								"OnPress": "/MDK01/Actions/Import_Inspection/NavToImportInspections.action"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "DisclosureIndicator",
+								"KeyName": "$(L,'NationalProductsInspections')",
+								"OnPress": "/MDK01/Actions/National_Inspection/NavToNational_Inspection.action"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "DisclosureIndicator",
+								"KeyName": "$(L,'Countings')",
+								"OnPress":  "/MDK01/Actions/Countings/NavToCountingsList.action"
+							}
+						}																																				
+					],
+					"Layout": {
+						"NumberOfColumns": 2,
+						"MinimumInteritemSpacing": "$(PLT,66,0)"
+					},
+					"_Type": "Section.Type.SimplePropertyCollection"			
+				}								
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Welcome",
+	"Caption": "$(L,'Welcome')",
+	"PrefersLargeCaption": true
+}

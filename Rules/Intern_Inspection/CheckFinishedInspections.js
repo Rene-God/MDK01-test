@@ -1,0 +1,27 @@
+/**
+ * @param {IClientAPI} clientAPI
+ */
+export default function CheckFinishedInspections(clientAPI) {
+    let selectedItems = clientAPI.getValue();
+    let selectedItemValue = selectedItems[0].ReturnValue;
+
+    if (selectedItems.length > 0) {
+        let pageProxy = clientAPI.evaluateTargetPathForAPI('#Page:Intern_Inspection_Add_SKU_Finding');
+        let pageBinding = pageProxy.getBindingObject();
+        let completedAudits = pageBinding._StockKeepingUnitItr;
+        let listPicker = clientAPI.evaluateTargetPath('#Page:Intern_Inspection_Add_SKU_Finding/#Control:Intern_SKULstPkr');
+
+        listPicker.clearValidation();
+
+        for (let i = 0; i < completedAudits.length; i++) {
+            if (completedAudits[i].stockKeepingUnitId === selectedItemValue) {
+                listPicker.setValidationProperty('ValidationMessage', clientAPI.localizeText('SelectAnotherSKU'));
+                listPicker.setValidationProperty('SeparatorIsHidden', false);
+                listPicker.setValidationProperty('ValidationViewIsHidden', false);
+                listPicker.setValidationProperty('ValidationMessageColor', "ff0000");
+                listPicker.setValidationProperty('ValidationViewBackgroundColor', "fffa00");
+                clientAPI.setValue("");
+            }
+        }
+    }
+}

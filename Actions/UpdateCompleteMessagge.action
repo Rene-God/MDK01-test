@@ -1,0 +1,10 @@
+{
+	"_Type": "Action.Type.ToastMessage",
+	"ActionResult": {
+		"_Name": "UpdateConfirmMesagge"
+	},
+	"OnSuccess": "/MDK01/Actions/NavToHome.action",
+	"Message": "$(L,'UpdateConfirmation')",
+	"Icon": "sap-icon://message-success",
+	"Animated": true
+}

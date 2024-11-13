@@ -1,0 +1,12 @@
+{
+	"DestinationName": "ABAP_API",
+	"PathSuffix": "/sap/opu/odata4/sap/zn5_wm_api_sb_hallazgo_o4/srvd/sap/zn5_wm_sd_hallazgo/0001",
+	"LanguageURLParam": "sap-language",
+	"OfflineEnabled": false,
+	"OnlineOptions": {
+		"CSDLOptions": [
+			"ignoreEdmAnnotations"
+		]
+	},
+	"SourceType": "Mobile"
+}

@@ -1,0 +1,31 @@
+{
+	"_Type": "Action.Type.PopoverMenu",
+	"ActionResult": {
+		"_Name": "Add_Finding_Intern_Menu"
+	},
+	"Title": "$(L,'AddFinding')",
+	"PopoverItems": [
+		{
+			"Title": "$(L,'AddFinding')",
+			"Icon": "sap-icon://add",
+			"Style": "",
+			"OnPress": {
+				"Name": "/MDK01/Actions/GenericNavigation.action",
+				"Properties": {
+					"PageToOpen": "/MDK01/Pages/Intern_Inspections/Intern_Inspection_Add_Finding.page",
+					"ModalPage": true
+				}
+			},
+			"Visible": true,
+			"Enabled": true
+		},
+		{
+            "Title": "$(L,'AddSKUWithFinding')",
+			"Icon": "sap-icon://add-product",
+			"Style": "",
+			"OnPress": "/MDK01/Rules/Intern_Inspection/OnRefreshSKUList.js",
+			"Visible": true,
+			"Enabled": true
+		}
+	]
+}

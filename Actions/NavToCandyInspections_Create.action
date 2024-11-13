@@ -1,0 +1,8 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "NavToCandyInspections_Create"
+	},
+	"PageToOpen": "/MDK01/Pages/Candy_Inspections/Candy_Inspection_Create.page",
+	"BackStackVisible": false
+}

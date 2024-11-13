@@ -1,0 +1,19 @@
+{
+	"_Type": "Action.Type.ODataService.Read",
+	"ActionResult": {
+		"_Name": "Get_Tu_Inspection"
+	},
+	"OnFailure": {
+		"Name": "/MDK01/Actions/GenericMessageBox.action",
+		"Properties": {
+			"Message": "$(L,'TransportUnitNoMatch')",
+			"OKCaption": "$(L,'OK')"
+		}
+	},
+	"OnSuccess": "/MDK01/Rules/TU_Inspection/Get_TU_InspectionResultValidation.js",
+	"Target": {
+		"Service": "/MDK01/Services/API01.service",
+		"EntitySet": "transportUnit",
+		"QueryOptions": "/MDK01/Rules/TU_Inspection/Get_Tu_InspectionQueryOptions.js"
+	}
+}

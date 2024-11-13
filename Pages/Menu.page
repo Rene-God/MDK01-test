@@ -1,0 +1,127 @@
+{
+	"Controls": [
+		{
+			"Header": {
+				"Headline": "$(L,'User')",
+				"SubHeadline": "#Application/#ClientData/UserId",
+				"Icon": "sap-icon://user-edit",
+				"Alignment": "Left",
+				"IconIsCircular": false,
+				"DisableIconText": false
+			},
+			"Sections": [
+				{
+					"_Name": "SideDrawerSection0",
+					"Items": [
+						{
+							"Title": "$(L,'Home')",
+							"Image": "sap-icon://home",
+							"PageToOpen": "/MDK01/Pages/Home.page",
+							"_Name": "SideDrawerSection0Item0",
+							"Visible": true,
+							"TextAlignment": "Left",
+							"Styles": {}
+						},
+						{
+							"Title": "$(L,'TUInspection')",
+							"Image": "sap-icon://suitcase",
+							"OnPress": "/MDK01/Actions/NavToTUInspectionsList.action",
+							"_Name": "SideDrawerSection0Item1",
+							"Visible": true,
+							"TextAlignment": "Left",
+							"Styles": {}
+						},
+						{
+							"Title": "$(L,'UnloadInspections')",
+							"Image": "sap-icon://physical-activity",
+							"OnPress": "/MDK01/Actions/NavToUnloadInspection_List.action",
+							"_Name": "SideDrawerSection0Item2",
+							"Visible": true,
+							"TextAlignment": "Left",
+							"Styles": {}
+						},
+						{
+							"Title": "$(L,'InternInspections')",
+							"Image": "sap-icon://fallback",
+							"OnPress": "/MDK01/Actions/Intern_Inspection/NavToInternInspection.action",
+							"_Name": "SideDrawerSection0Item3",
+							"Visible": true,
+							"TextAlignment": "Left",
+							"Styles": {}
+						},
+						{
+							"Title": "$(L,'SuppliesInspections')",
+							"Image": "sap-icon://employee-lookup",
+							"_Name": "SideDrawerSection0Item4",
+							"OnPress": "/MDK01/Actions/Supplies_Inspection/NavToSuppliesInspection.action",
+							"Visible": true,
+							"TextAlignment": "Left",
+							"Styles": {}
+						},
+						{
+							"Title": "$(L,'CandysProductsInspections')",
+							"Image": "sap-icon://add-product",
+							"OnPress": "/MDK01/Actions/NavToCandyInspection_List.action",
+							"_Name": "SideDrawerSection0Item5",
+							"Visible": true,
+							"TextAlignment": "Left",
+							"Styles": {}
+						},
+						{
+							"Title": "$(L,'ImportsProductsInspections')",
+							"Image": "sap-icon://bar-code",
+							"OnPress": "/MDK01/Actions/Import_Inspection/NavToImportInspections.action",
+							"_Name": "SideDrawerSection0Item6",
+							"Visible": true,
+							"TextAlignment": "Left",
+							"Styles": {}
+						},
+						{
+							"Title": "$(L,'NationalProductsInspections')",
+							"Image": "sap-icon://inspection",
+							"OnPress": "/MDK01/Actions/National_Inspection/NavToNational_Inspection.action",
+							"_Name": "SideDrawerSection0Item7",
+							"Visible": true,
+							"TextAlignment": "Left",
+							"Styles": {}
+						},
+						{
+							"Title": "$(L,'Countings')",
+							"Image": "sap-icon://sap-box",
+							"OnPress": "/MDK01/Actions/Countings/NavToCountingsList.action",
+							"_Name": "SideDrawerSection0Item8",
+							"Visible": true,
+							"TextAlignment": "Left",
+							"Styles": {}
+						}
+					],
+					"Visible": true,
+					"PreserveImageSpacing": true,
+					"SeparatorEnabled": true
+				},
+				{
+					"_Name": "SideDrawerSection1",
+					"Items": [
+						{
+							"_Name": "LogOut",
+							"Title": "$(L,'SignOut')",
+							"Image": "sap-icon://log",
+							"OnPress": "/MDK01/Actions/Logout.action",
+							"Visible": true,
+							"TextAlignment": "Left"
+						}
+					],
+					"Visible": true,
+					"PreserveImageSpacing": true,
+					"SeparatorEnabled": false
+				}
+			],
+			"_Type": "Control.Type.SideDrawer",
+			"_Name": "Menu",
+			"AlwaysShowDrawerButton": false,
+			"ClearHistory": false
+		}
+	],
+	"_Type": "Page",
+	"_Name": "SideMenu"
+}

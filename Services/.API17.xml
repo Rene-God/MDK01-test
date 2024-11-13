@@ -1,0 +1,968 @@
+
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+    xmlns="http://docs.oasis-open.org/odata/ns/edm" Version="4.0">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HIERARCHY',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Hierarchy.v1" Alias="SAP__hierarchy"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="auditoriaInternaResultType">
+                <Key>
+                    <PropertyRef Name="proveedor"/>
+                    <PropertyRef Name="numeroauditoriainterna"/>
+                    <PropertyRef Name="hu"/>
+                </Key>
+                <Property Name="proveedor" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="numeroauditoriainterna" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="hu" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="razonSocial" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="area" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="areadesc" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ubicacion" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="fechaInspecion" Type="Edm.Date"/>
+                <Property Name="auditor" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                <Property Name="tiendaDestino" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="estatus" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="__CreateByAssociationControl" Type="com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001.auditoriaInternaResultCbAControl"/>
+                <Property Name="__EntityControl" Type="com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001.EntityControl"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001.SAP__Message)" Nullable="false"/>
+                <NavigationProperty Name="_toAuditoriaInternaItemResult" Type="Collection(com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001.auditoriaInternaItemResultType)" Partner="_toAuditoriaInternaResult">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="auditoriaInternaItemResultType">
+                <Key>
+                    <PropertyRef Name="proveedor"/>
+                    <PropertyRef Name="numeroauditoriainterna"/>
+                    <PropertyRef Name="hu"/>
+                </Key>
+                <Property Name="proveedor" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="numeroauditoriainterna" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="hu" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="sku" Type="Edm.String" Nullable="false" MaxLength="22"/>
+                <Property Name="piezassku" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="__EntityControl" Type="com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001.EntityControl"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001.SAP__Message)" Nullable="false"/>
+                <NavigationProperty Name="_toAuditoriaInternaResult" Type="com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001.auditoriaInternaResultType" Nullable="false" Partner="_toAuditoriaInternaItemResult">
+                    <ReferentialConstraint Property="proveedor" ReferencedProperty="proveedor"/>
+                    <ReferentialConstraint Property="numeroauditoriainterna" ReferencedProperty="numeroauditoriainterna"/>
+                    <ReferentialConstraint Property="hu" ReferencedProperty="hu"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="auditoriaInternaItemType">
+                <Key>
+                    <PropertyRef Name="proveedor"/>
+                    <PropertyRef Name="NumAuditInterna"/>
+                    <PropertyRef Name="hu"/>
+                    <PropertyRef Name="area"/>
+                    <PropertyRef Name="sku"/>
+                </Key>
+                <Property Name="proveedor" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="NumAuditInterna" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="hu" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="area" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="sku" Type="Edm.String" Nullable="false" MaxLength="22"/>
+                <Property Name="piezasSku" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="__EntityControl" Type="com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001.EntityControl"/>
+                <NavigationProperty Name="_toAuditoriaInterna" Type="com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001.auditoriaInternaType" Nullable="false" Partner="_toAuditoriaInternaItem">
+                    <ReferentialConstraint Property="proveedor" ReferencedProperty="proveedor"/>
+                    <ReferentialConstraint Property="NumAuditInterna" ReferencedProperty="NumAuditInterna"/>
+                    <ReferentialConstraint Property="hu" ReferencedProperty="hu"/>
+                    <ReferentialConstraint Property="area" ReferencedProperty="area"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="userType">
+                <Key>
+                    <PropertyRef Name="UserId"/>
+                </Key>
+                <Property Name="UserId" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                <Property Name="BusinessPartnerUUID" Type="Edm.Guid"/>
+                <Property Name="email" Type="Edm.String" Nullable="false" MaxLength="241"/>
+                <Property Name="AuthorizationGroup" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="IsBusinessPurposeCompleted" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="AuthorizationGroupWK" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="IsBusinessPurposeCompletedWK" Type="Edm.String" Nullable="false" MaxLength="1"/>
+            </EntityType>
+            <EntityType Name="auditoriaInternaType">
+                <Key>
+                    <PropertyRef Name="proveedor"/>
+                    <PropertyRef Name="NumAuditInterna"/>
+                    <PropertyRef Name="hu"/>
+                    <PropertyRef Name="area"/>
+                </Key>
+                <Property Name="proveedor" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="NumAuditInterna" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="hu" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="area" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="piezasHu" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="razonSocial" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="areaDesc" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ubicacion" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="fechaInspeccion" Type="Edm.Date"/>
+                <Property Name="tiendaDestino" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="auditor" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                <Property Name="aleatorio" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="batch" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="estatus" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="updateTable" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="__CreateByAssociationControl" Type="com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001.auditoriaInternaCbAControl"/>
+                <Property Name="__EntityControl" Type="com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001.EntityControl"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001.SAP__Message)" Nullable="false"/>
+                <NavigationProperty Name="_toAuditoriaInternaItem" Type="Collection(com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001.auditoriaInternaItemType)" Partner="_toAuditoriaInterna">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="areaType">
+                <Key>
+                    <PropertyRef Name="Code"/>
+                </Key>
+                <Property Name="Code" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="40"/>
+            </EntityType>
+            <ComplexType Name="auditoriaInternaResultCbAControl">
+                <Property Name="_toAuditoriaInternaItemResult" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="auditoriaInternaCbAControl">
+                <Property Name="_toAuditoriaInternaItem" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="EntityControl">
+                <Property Name="Deletable" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="Updatable" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="SAP__Message">
+                <Property Name="code" Type="Edm.String" Nullable="false"/>
+                <Property Name="message" Type="Edm.String" Nullable="false"/>
+                <Property Name="target" Type="Edm.String"/>
+                <Property Name="additionalTargets" Type="Collection(Edm.String)" Nullable="false"/>
+                <Property Name="transition" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="numericSeverity" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="longtextUrl" Type="Edm.String"/>
+            </ComplexType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="area" EntityType="com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001.areaType"/>
+                <EntitySet Name="auditoriaInterna" EntityType="com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001.auditoriaInternaType">
+                    <NavigationPropertyBinding Path="_toAuditoriaInternaItem" Target="auditoriaInternaItem"/>
+                </EntitySet>
+                <EntitySet Name="auditoriaInternaItem" EntityType="com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001.auditoriaInternaItemType">
+                    <NavigationPropertyBinding Path="_toAuditoriaInterna" Target="auditoriaInterna"/>
+                </EntitySet>
+                <EntitySet Name="auditoriaInternaItemResult" EntityType="com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001.auditoriaInternaItemResultType">
+                    <NavigationPropertyBinding Path="_toAuditoriaInternaResult" Target="auditoriaInternaResult"/>
+                </EntitySet>
+                <EntitySet Name="auditoriaInternaResult" EntityType="com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001.auditoriaInternaResultType">
+                    <NavigationPropertyBinding Path="_toAuditoriaInternaItemResult" Target="auditoriaInternaItemResult"/>
+                </EntitySet>
+                <EntitySet Name="user" EntityType="com.sap.gateway.srvd.zn5_wm_sd_auditinterna.v0001.userType"/>
+            </EntityContainer>
+            <Annotations Target="SAP__self.auditoriaInternaResultType/proveedor">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="Business Partner"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaResultType/numeroauditoriainterna">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="Internal Aud number"/>
+                <Annotation Term="SAP__common.Heading" String="Internal Audit number"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Internal Audit number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaResultType/hu">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="HU"/>
+                <Annotation Term="SAP__common.QuickInfo" String="HU Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaResultType/razonSocial">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="RAZONSOCIAL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaResultType/tiendaDestino">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="TIENDADESTINO"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaResultType/__CreateByAssociationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaResultType/__EntityControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaResultType/_toAuditoriaInternaItemResult">
+                <Annotation Term="SAP__common.Composition"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/auditoriaInternaResult">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_toAuditoriaInternaItemResult"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Path="__CreateByAssociationControl/_toAuditoriaInternaItemResult"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__CreateByAssociationControl</PropertyPath>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>__CreateByAssociationControl</PropertyPath>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Path="__EntityControl/Deletable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Path="__EntityControl/Updatable"/>
+                        <PropertyValue Property="NonUpdatableNavigationProperties">
+                            <Collection>
+                                <PropertyPath>_toAuditoriaInternaItemResult</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaResultType">
+                <Annotation Term="SAP__common.Label" String="Programación de Auditorias Internas"/>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaItemResultType/proveedor">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="Business Partner"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaItemResultType/numeroauditoriainterna">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="Internal Aud number"/>
+                <Annotation Term="SAP__common.Heading" String="Internal Audit number"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Internal Audit number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaItemResultType/hu">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="HU"/>
+                <Annotation Term="SAP__common.QuickInfo" String="HU Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaItemResultType/__EntityControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/auditoriaInternaItemResult">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_toAuditoriaInternaResult"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Path="__EntityControl/Deletable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Path="__EntityControl/Updatable"/>
+                        <PropertyValue Property="NonUpdatableNavigationProperties">
+                            <Collection>
+                                <PropertyPath>_toAuditoriaInternaResult</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaItemResultType">
+                <Annotation Term="SAP__common.Label" String="Internal audits - items"/>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaItemType/proveedor">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="PROVEEDOR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaItemType/NumAuditInterna">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Internal Aud number"/>
+                <Annotation Term="SAP__common.Heading" String="Internal Audit number"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Internal Audit number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaItemType/hu">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="HU"/>
+                <Annotation Term="SAP__common.QuickInfo" String="HU Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaItemType/area">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Inspection Area"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaItemType/sku">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="SKU"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaItemType/__EntityControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/auditoriaInternaItem">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_toAuditoriaInterna"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                    <PropertyValue Property="SortRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Sortable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                    <PropertyValue Property="FilterRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Filterable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.ReadRestrictions">
+                    <Record>
+                        <PropertyValue Property="Readable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Path="__EntityControl/Deletable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Path="__EntityControl/Updatable"/>
+                        <PropertyValue Property="NonUpdatableNavigationProperties">
+                            <Collection>
+                                <PropertyPath>_toAuditoriaInterna</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaItemType">
+                <Annotation Term="SAP__common.Label" String="Programación de Auditorias Internas Item"/>
+            </Annotations>
+            <Annotations Target="SAP__self.userType/UserId">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="User ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.userType/AuthorizationGroup">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Authorization Group"/>
+                <Annotation Term="SAP__common.Heading" String="AGrp"/>
+            </Annotations>
+            <Annotations Target="SAP__self.userType/IsBusinessPurposeCompleted">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Purpose Completed"/>
+                <Annotation Term="SAP__common.Heading" String="Business Purpose Completed Flag"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Business Purpose Completed Flag"/>
+            </Annotations>
+            <Annotations Target="SAP__self.userType/AuthorizationGroupWK">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Authorization Group"/>
+                <Annotation Term="SAP__common.Heading" String="AGrp"/>
+            </Annotations>
+            <Annotations Target="SAP__self.userType/IsBusinessPurposeCompletedWK">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Purpose Completed"/>
+                <Annotation Term="SAP__common.Heading" String="Business Purpose Completed Flag"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Business Purpose Completed Flag"/>
+            </Annotations>
+            <Annotations Target="SAP__self.userType">
+                <Annotation Term="SAP__common.Label" String="Users"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/user">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="email"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/proveedor">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="PROVEEDOR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/NumAuditInterna">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Internal Aud number"/>
+                <Annotation Term="SAP__common.Heading" String="Internal Audit number"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Internal Audit number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/hu">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="HU"/>
+                <Annotation Term="SAP__common.QuickInfo" String="HU Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/area">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="Inspection Area"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/razonSocial">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="RAZONSOCIAL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/__CreateByAssociationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/__EntityControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/_toAuditoriaInternaItem">
+                <Annotation Term="SAP__common.Composition"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/auditoriaInterna">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_toAuditoriaInternaItem"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Path="__CreateByAssociationControl/_toAuditoriaInternaItem"/>
+                                        </Record>
+                                    </PropertyValue>
+                                    <PropertyValue Property="FilterRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Filterable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="RequiredProperties">
+                            <Collection>
+                                <PropertyPath>area</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__CreateByAssociationControl</PropertyPath>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>__CreateByAssociationControl</PropertyPath>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Path="__EntityControl/Deletable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Path="__EntityControl/Updatable"/>
+                        <PropertyValue Property="NonUpdatableNavigationProperties">
+                            <Collection>
+                                <PropertyPath>_toAuditoriaInternaItem</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType">
+                <Annotation Term="SAP__common.Label" String="Programación de Auditorias Internas"/>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.areaType/Language">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="LANGUAGE"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Language"/>
+            </Annotations>
+            <Annotations Target="SAP__self.areaType/Description">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="AREA DESCRIPTION"/>
+            </Annotations>
+            <Annotations Target="SAP__self.areaType">
+                <Annotation Term="SAP__common.Label" String="Custom Entity for Value Help Area"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/area">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Padding" Bool="true"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="HeaderFooter" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                        <PropertyValue Property="IANATimezoneFormat" Bool="true"/>
+                        <PropertyValue Property="Treeview" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.KeyAsSegmentSupported"/>
+                <Annotation Term="SAP__capabilities.AsynchronousRequestsSupported"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/aleatorio">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Random"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Aleatorio"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/batch">
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/estatus">
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/updateTable">
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaResultType/area">
+                <Annotation Term="SAP__common.Label" String="Inspection Area"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaResultType/areadesc">
+                <Annotation Term="SAP__common.Label" String="Inspection Area Desc"/>
+                <Annotation Term="SAP__common.Heading" String="Inspection Area Description"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Description Area"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaResultType/ubicacion">
+                <Annotation Term="SAP__common.Label" String="Storage Bin"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaResultType/fechaInspecion">
+                <Annotation Term="SAP__common.Label" String="Inspection Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaResultType/auditor">
+                <Annotation Term="SAP__common.Label" String="Auditor"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaResultType/__CreateByAssociationControl/_toAuditoriaInternaItemResult">
+                <Annotation Term="SAP__common.Label" String="Dynamic CbA-Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Create by Association Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Create via Association Control Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaResultType/__EntityControl/Deletable">
+                <Annotation Term="SAP__common.Label" String="Dyn. Method Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Method Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Method Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaResultType/__EntityControl/Updatable">
+                <Annotation Term="SAP__common.Label" String="Dyn. Method Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Method Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Method Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaItemResultType/sku">
+                <Annotation Term="SAP__common.Label" String="SKU"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaItemResultType/piezassku">
+                <Annotation Term="SAP__common.Label" String="Pieces for each SKU"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Pieces for each SKU / Quantity for each SKU"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaItemResultType/__EntityControl/Deletable">
+                <Annotation Term="SAP__common.Label" String="Dyn. Method Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Method Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Method Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaItemResultType/__EntityControl/Updatable">
+                <Annotation Term="SAP__common.Label" String="Dyn. Method Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Method Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Method Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaItemType/piezasSku">
+                <Annotation Term="SAP__common.Label" String="Pieces for each SKU"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Pieces for each SKU / Quantity for each SKU"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaItemType/__EntityControl/Deletable">
+                <Annotation Term="SAP__common.Label" String="Dyn. Method Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Method Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Method Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaItemType/__EntityControl/Updatable">
+                <Annotation Term="SAP__common.Label" String="Dyn. Method Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Method Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Method Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.userType/Name">
+                <Annotation Term="SAP__common.Label" String="Description"/>
+                <Annotation Term="SAP__common.QuickInfo" String="User Description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.userType/BusinessPartnerUUID">
+                <Annotation Term="SAP__common.Label" String="BP GUID"/>
+                <Annotation Term="SAP__common.Heading" String="Business Partner GUID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Business Partner GUID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.userType/email">
+                <Annotation Term="SAP__common.Label" String="E-Mail Address"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/piezasHu">
+                <Annotation Term="SAP__common.Label" String="Quantity pieces HU"/>
+                <Annotation Term="SAP__common.Heading" String="Quantity pieces in the HU"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Quantity pieces in the HU"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/areaDesc">
+                <Annotation Term="SAP__common.Label" String="Inspection Area Desc"/>
+                <Annotation Term="SAP__common.Heading" String="Inspection Area Description"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Description Area"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/ubicacion">
+                <Annotation Term="SAP__common.Label" String="Storage Bin"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/fechaInspeccion">
+                <Annotation Term="SAP__common.Label" String="Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/tiendaDestino">
+                <Annotation Term="SAP__common.Label" String="Store"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Tienda"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/auditor">
+                <Annotation Term="SAP__common.Label" String="Auditor"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/__CreateByAssociationControl/_toAuditoriaInternaItem">
+                <Annotation Term="SAP__common.Label" String="Dynamic CbA-Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Create by Association Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Create via Association Control Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/__EntityControl/Deletable">
+                <Annotation Term="SAP__common.Label" String="Dyn. Method Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Method Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Method Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaType/__EntityControl/Updatable">
+                <Annotation Term="SAP__common.Label" String="Dyn. Method Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Method Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Method Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.areaType/Code">
+                <Annotation Term="SAP__common.Label" String="Inspection Area"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaResultCbAControl/_toAuditoriaInternaItemResult">
+                <Annotation Term="SAP__common.Label" String="Dynamic CbA-Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Create by Association Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Create via Association Control Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.auditoriaInternaCbAControl/_toAuditoriaInternaItem">
+                <Annotation Term="SAP__common.Label" String="Dynamic CbA-Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Create by Association Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Create via Association Control Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.EntityControl/Deletable">
+                <Annotation Term="SAP__common.Label" String="Dyn. Method Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Method Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Method Property"/>
+            </Annotations>
+            <Annotations Target="SAP__self.EntityControl/Updatable">
+                <Annotation Term="SAP__common.Label" String="Dyn. Method Control"/>
+                <Annotation Term="SAP__common.Heading" String="Dynamic Method Control"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Dynamic Method Property"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

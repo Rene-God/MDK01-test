@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "NavToTUInspectionsList"
+	},
+	"PageToOpen": "/MDK01/Pages/TU_Inspection/TU_Inspection_List.page"
+}

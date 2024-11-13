@@ -1,0 +1,646 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+    xmlns="http://docs.oasis-open.org/odata/ns/edm" Version="4.0">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HIERARCHY',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Hierarchy.v1" Alias="SAP__hierarchy"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd_a2x.zn5_wm_sd_transport.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="transportUnitType">
+                <Key>
+                    <PropertyRef Name="documento"/>
+                </Key>
+                <Property Name="documento" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="cita" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="transportUnit" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="placa" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="puerta" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="tuIdent" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="proveedor" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="razonSocial" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="pedido" Type="Edm.String" Nullable="false" MaxLength="32"/>
+                <Property Name="refdocno" Type="Edm.String" Nullable="false" MaxLength="32"/>
+                <Property Name="fecha" Type="Edm.Decimal" Nullable="false" Precision="15"/>
+                <Property Name="horaCita" Type="Edm.Decimal" Nullable="false" Precision="15"/>
+                <Property Name="qtyCita" Type="Edm.Decimal" Nullable="false" Precision="31" Scale="14"/>
+                <Property Name="qty" Type="Edm.Decimal" Nullable="false" Precision="31" Scale="14"/>
+                <Property Name="unidad" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="horaArribo" Type="Edm.Decimal" Nullable="false" Precision="15"/>
+                <Property Name="propietario" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="propietarioDesc" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <NavigationProperty Name="_to_hu" Type="Collection(com.sap.gateway.srvd_a2x.zn5_wm_sd_transport.v0001.handlingUnitType)" Partner="_to_tu">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="handlingUnitType">
+                <Key>
+                    <PropertyRef Name="documento"/>
+                </Key>
+                <Property Name="documento" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="handlingUnit" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="HUQuantity" Type="Edm.Decimal" Nullable="false" Precision="31" Scale="14"/>
+                <Property Name="unidad" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="putssq" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <NavigationProperty Name="_to_sku" Type="Collection(com.sap.gateway.srvd_a2x.zn5_wm_sd_transport.v0001.stockKeepingUnitType)" Partner="_to_hu">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+                <NavigationProperty Name="_to_tu" Type="com.sap.gateway.srvd_a2x.zn5_wm_sd_transport.v0001.transportUnitType" Nullable="false" Partner="_to_hu">
+                    <ReferentialConstraint Property="documento" ReferencedProperty="documento"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="stockKeepingUnitType">
+                <Key>
+                    <PropertyRef Name="documento"/>
+                </Key>
+                <Property Name="documento" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="handlingUnit" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="tipoMercancia" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="skuDesc" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="sku" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="quantity" Type="Edm.Decimal" Nullable="false" Precision="31" Scale="14"/>
+                <Property Name="unidad" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="qtyCita" Type="Edm.Decimal" Nullable="false" Precision="31" Scale="14"/>
+                <Property Name="seccion" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="seccionDesc" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="direccion" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="direccionDesc" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="grupoArticulo" Type="Edm.String" Nullable="false" MaxLength="9"/>
+                <Property Name="grupoArticuloDesc" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="propietario" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="propietarioDesc" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <NavigationProperty Name="_to_hu" Type="com.sap.gateway.srvd_a2x.zn5_wm_sd_transport.v0001.handlingUnitType" Nullable="false" Partner="_to_sku">
+                    <ReferentialConstraint Property="documento" ReferencedProperty="documento"/>
+                </NavigationProperty>
+                <NavigationProperty Name="_to_tu" Type="com.sap.gateway.srvd_a2x.zn5_wm_sd_transport.v0001.transportUnitType"/>
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="handlingUnit" EntityType="com.sap.gateway.srvd_a2x.zn5_wm_sd_transport.v0001.handlingUnitType">
+                    <NavigationPropertyBinding Path="_to_sku" Target="stockKeepingUnit"/>
+                    <NavigationPropertyBinding Path="_to_tu" Target="transportUnit"/>
+                </EntitySet>
+                <EntitySet Name="stockKeepingUnit" EntityType="com.sap.gateway.srvd_a2x.zn5_wm_sd_transport.v0001.stockKeepingUnitType">
+                    <NavigationPropertyBinding Path="_to_hu" Target="handlingUnit"/>
+                    <NavigationPropertyBinding Path="_to_tu" Target="transportUnit"/>
+                </EntitySet>
+                <EntitySet Name="transportUnit" EntityType="com.sap.gateway.srvd_a2x.zn5_wm_sd_transport.v0001.transportUnitType">
+                    <NavigationPropertyBinding Path="_to_hu" Target="handlingUnit"/>
+                </EntitySet>
+            </EntityContainer>
+            <Annotations Target="SAP__self.transportUnitType/documento">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Document Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.transportUnitType/cita">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Cita"/>
+            </Annotations>
+            <Annotations Target="SAP__self.transportUnitType/transportUnit">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Transport ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="TU ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.transportUnitType/placa">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="License Plate Number"/>
+                <Annotation Term="SAP__common.QuickInfo" String="License Plate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.transportUnitType/puerta">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="PUERTA"/>
+            </Annotations>
+            <Annotations Target="SAP__self.transportUnitType/tuIdent">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="TU ID"/>
+                <Annotation Term="SAP__common.Heading" String="Alternative TU Identification"/>
+                <Annotation Term="SAP__common.QuickInfo" String="TU Identification"/>
+            </Annotations>
+            <Annotations Target="SAP__self.transportUnitType/proveedor">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="PROVEEDOR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.transportUnitType/razonSocial">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="RAZONSOCIAL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.transportUnitType/pedido">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="PEDIDO"/>
+            </Annotations>
+            <Annotations Target="SAP__self.transportUnitType/refdocno">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="PEDIDO"/>
+            </Annotations>
+            <Annotations Target="SAP__self.transportUnitType/qtyCita">
+                <Annotation Term="SAP__measures.Unit" Path="unidad"/>
+                <Annotation Term="SAP__common.Label" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.transportUnitType/qty">
+                <Annotation Term="SAP__measures.Unit" Path="unidad"/>
+                <Annotation Term="SAP__common.Label" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.transportUnitType/unidad">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Unit of Measure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.transportUnitType/propietario">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Company"/>
+            </Annotations>
+            <Annotations Target="SAP__self.transportUnitType/propietarioDesc">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="ZEMP Desc"/>
+                <Annotation Term="SAP__common.Heading" String="ZEMP Description"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Zemp Description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.transportUnitType/_to_hu">
+                <Annotation Term="SAP__common.Composition"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/transportUnit">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_to_hu"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="true"/>
+                                        </Record>
+                                    </PropertyValue>
+                                    <PropertyValue Property="SortRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Sortable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                    <PropertyValue Property="FilterRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Filterable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="NonUpdatableNavigationProperties">
+                            <Collection>
+                                <PropertyPath>_to_hu</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="qtyCita"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="qty"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.transportUnitType">
+                <Annotation Term="SAP__common.Label" String="Custom Entity for Transport Unit"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__CodeList.UnitsOfMeasure">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="UnitsOfMeasure"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Padding" Bool="true"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="HeaderFooter" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                        <PropertyValue Property="IANATimezoneFormat" Bool="true"/>
+                        <PropertyValue Property="Treeview" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.KeyAsSegmentSupported"/>
+                <Annotation Term="SAP__capabilities.AsynchronousRequestsSupported"/>
+            </Annotations>
+            <Annotations Target="SAP__self.handlingUnitType/documento">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Document Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.handlingUnitType/handlingUnit">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="HANDLING UNIT ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="HANDLINGUNITID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.handlingUnitType/HUQuantity">
+                <Annotation Term="SAP__measures.Unit" Path="unidad"/>
+                <Annotation Term="SAP__common.Label" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.handlingUnitType/unidad">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Unit of Measure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.handlingUnitType/putssq">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Stor.Type Srch Seq."/>
+                <Annotation Term="SAP__common.Heading" String="Seq"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Storage Type Search Sequence: Putaway"/>
+            </Annotations>
+            <Annotations Target="SAP__self.handlingUnitType/_to_sku">
+                <Annotation Term="SAP__common.Composition"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/handlingUnit">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_to_sku"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="true"/>
+                                        </Record>
+                                    </PropertyValue>
+                                    <PropertyValue Property="SortRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Sortable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                    <PropertyValue Property="FilterRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Filterable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_to_tu"/>
+                                    <PropertyValue Property="SortRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Sortable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                    <PropertyValue Property="FilterRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Filterable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="NonUpdatableNavigationProperties">
+                            <Collection>
+                                <PropertyPath>_to_sku</PropertyPath>
+                                <PropertyPath>_to_tu</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="HUQuantity"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.handlingUnitType">
+                <Annotation Term="SAP__common.Label" String="Custom Entity for Handling Unit"/>
+            </Annotations>
+            <Annotations Target="SAP__self.stockKeepingUnitType/documento">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Document Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.stockKeepingUnitType/handlingUnit">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="HANDLING UNIT ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="HANDLINGUNITID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.stockKeepingUnitType/skuDesc">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Description"/>
+                <Annotation Term="SAP__common.Heading" String="Material Description"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.stockKeepingUnitType/sku">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Product"/>
+            </Annotations>
+            <Annotations Target="SAP__self.stockKeepingUnitType/quantity">
+                <Annotation Term="SAP__measures.Unit" Path="unidad"/>
+                <Annotation Term="SAP__common.Label" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.stockKeepingUnitType/unidad">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Unit of Measure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.stockKeepingUnitType/qtyCita">
+                <Annotation Term="SAP__measures.Unit" Path="unidad"/>
+                <Annotation Term="SAP__common.Label" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.stockKeepingUnitType/seccion">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Section"/>
+            </Annotations>
+            <Annotations Target="SAP__self.stockKeepingUnitType/seccionDesc">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Section Description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.stockKeepingUnitType/direccion">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Direction"/>
+            </Annotations>
+            <Annotations Target="SAP__self.stockKeepingUnitType/direccionDesc">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Direction Desc"/>
+                <Annotation Term="SAP__common.Heading" String="Direction Description"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Direction Description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.stockKeepingUnitType/grupoArticulo">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Material Group"/>
+            </Annotations>
+            <Annotations Target="SAP__self.stockKeepingUnitType/grupoArticuloDesc">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Prod Group Name"/>
+                <Annotation Term="SAP__common.Heading" String="Product Group Name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Product Group Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.stockKeepingUnitType/propietario">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Company"/>
+            </Annotations>
+            <Annotations Target="SAP__self.stockKeepingUnitType/propietarioDesc">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="ZEMP Desc"/>
+                <Annotation Term="SAP__common.Heading" String="ZEMP Description"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Zemp Description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/stockKeepingUnit">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_to_hu"/>
+                                    <PropertyValue Property="SortRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Sortable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                    <PropertyValue Property="FilterRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Filterable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_to_tu"/>
+                                    <PropertyValue Property="SortRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Sortable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                    <PropertyValue Property="FilterRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Filterable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="NonUpdatableNavigationProperties">
+                            <Collection>
+                                <PropertyPath>_to_hu</PropertyPath>
+                                <PropertyPath>_to_tu</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="quantity"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="qtyCita"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.stockKeepingUnitType">
+                <Annotation Term="SAP__common.Label" String="Custom Entity for Stock Keeping Unit"/>
+            </Annotations>
+            <Annotations Target="SAP__self.transportUnitType/fecha">
+                <Annotation Term="SAP__common.Label" String="Started On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.transportUnitType/horaCita">
+                <Annotation Term="SAP__common.Label" String="End Date/Time"/>
+            </Annotations>
+            <Annotations Target="SAP__self.transportUnitType/horaArribo">
+                <Annotation Term="SAP__common.Label" String="ActlStrtTS"/>
+                <Annotation Term="SAP__common.Heading" String="Time Stamp: Actual Start"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Start_Actual Timestamp"/>
+            </Annotations>
+            <Annotations Target="SAP__self.stockKeepingUnitType/tipoMercancia">
+                <Annotation Term="SAP__common.Label" String="Type of Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="EEW: Additional Data Type of Material"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
